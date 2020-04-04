@@ -1,0 +1,13 @@
+const btn = document.getElementById("ask-weather");			// On récupère l'élément button "ask-weather"
+let result = document.getElementById("weather-result");			// On récupère l'élément div "weather-result"
+btn.addEventListener("click", function () {				// On créer un EventListener, qui à chaque clique sur le bouton, affichera la météo sur paris
+  let request = new XMLHttpRequest();					// Pour cela il va créer une nouvelle requête à chaque clique sur le bouton, 
+  request.onreadystatechange = function () {				// et va vérifier l'état de la requête
+    if (this.readyState == XMLHttpRequest.DONE && this.status == 200) { 	// Si la requête se termine (DONE) et que son status affiche que tous s'est bien passé (code 200)
+      let response = JSON.parse(this.responseText);				// On créer une variable "response" qui contiendra les résultat de la requête transformer d'un format JSON en objet JavaScript(JSON.parse)
+      result.innerHTML = response.current_condition.condition;			// On affiche le résultat dans l'élément "result", on ne s'interesse ici qu'à un élément de la réponse : "current_condition.condition" qui contient le mot exprimant l'état de la météo actuelle.
+    }
+  };
+  request.open("GET", "https://www.prevision-meteo.ch/services/json/paris"); // la requête va récupérer dans l'URL spécifié la météo de paris (GET)
+  request.send();							     // la requête est envoyé au serveur
+});
