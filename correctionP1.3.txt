@@ -1,0 +1,24 @@
+--------------- Créez un nouvel élément de type paragraphe  p ----------------------
+
+const newP = document.createElement("p");  	// On créer la constante qui va générer un élément <p> (sera l'élément enfant)
+
+--------------- Ajoutez votre nouvel élément dans l'élément ayant pour id  main  ----------------------
+
+const main = document.getElementById("main"); 	// On créer la constante afin de récupérer l'élément existant ayant pour id "main" (sera l'élément parent)
+main.appendChild(newP); 			// On affecte <p> en tant qu'enfant de l'élément <div> "main"
+console.log(main.innerHTML); 			// On vérifie le contenu de la balise <div>, la console affiche "<p></p>"
+
+
+--------------- Ajoutez ce contenu HTML dans l'élément que vous avez créé lors de la première tâche :  Mon <strong>grand</strong> contenu   ----------------------
+
+newP.innerHTML=("Mon <strong>grand</strong> contenu");	// Le texte apparait sur la page en gras et rouge
+
+
+--------------- Ajoutez la classe important à l'élément que vous avez créé lors de la première tâche   ----------------------
+
+newP.classList.add("important");	// Le texte est maintenant en italic
+
+
+--------------- Modifier la couleur   ----------------------
+
+newP.style.color="green";	// Le texte est maintenant en vert

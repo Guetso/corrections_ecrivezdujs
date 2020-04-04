@@ -1,0 +1,40 @@
+Pour afficher une console utiliser le site JSBIN et récopié le HTML et le CSS du codepen de l'exercice.
+
+//---------------Récupérez l'élément ayant pour ID main-content grâce à son ID --------------------
+
+const main =document.getElementById("main-content"); // On va créer une constante qui sera la balise portant l'ID "main-content"
+console.log(main.textContent); // Pour s'assurer que l'on récupéré le bon élément, on demande à la console d'afficher une des caractéristique de l'élément "main", à savoir son contenu de text
+
+// La console affiche "Ce contenu est spécial"
+
+//---------------Récupérez les éléments ayant pour classe  important --------------------
+
+const important = document.getElementsByClassName("important"); // On créer une constante qui regroupera tous les éléments ayant pour classe "important"
+const firstImportant = important[0]; // A la différence du premier cas, ici il y a plusieurs éléments (car plusieurs classe "important"), on va isoler le 1er élément de la liste (en JS le premier élément = 0)
+console.log(firstImportant.innerText); //on l'affiche dans la console 
+
+// La console affiche un paragraphe de lorem
+
+//---------------Récupérez les éléments de type  article --------------------
+
+const article = document.getElementsByTagName("article"); // On créer une constante qui regroupera tous les éléments ayant pour balise "article"
+const firstArticle = article[0]; // Il y a plusieurs éléments (car plusieurs classe "important"), on va isoler le 1er élément de la liste (en JS le premier élément = 0)
+console.log(firstArticle.innerText); //on l'affiche dans la console 
+
+// La console affiche deux paragraphe de lorem
+
+//---------------Récupérez les éléments de type  li qui sont dans une liste ul ayant la classe  important . Cette liste doit elle-même être dans un article (article) --------------------
+
+const liImportant = document.querySelector("article ul.important>li"); // On fait une recherche des "ul" ayant une classe "important" et qui son contenu dans une balise "article"
+console.log(liImportant.innerText); //on l'affiche dans la console 
+
+// La console affiche "Elément 4 ". Rappel : querySelector() ne renvoi que le 1er élément qui correspond à la recherche 
+
+
+//---------------En reprenant le résultat de la tâche précédente, récupérez l'élément li suivant de la liste ul --------------------
+
+const liImportant = document.querySelector("article ul.important>li"); // Idem précédent
+const liSecond = liImportant.nextElementSibling; // On créer une constante qui correspond à l'élément suivant dans la constante précédente.
+console.log(liSecond.innerText);
+
+// La console affiche "Elément 5"
