@@ -18,4 +18,4 @@ code.addEventListener("input", function (code) { 		// On créer un "écouteur d'
 
 ------- HTML --------------
 
-<label>Email : <input type="email" name="email" /></label> 	<!--On a remplacer la valeur "text" par la valeur "email" dans l'attribut "type"-->
+<label>Email : <input type="email" required name="email" /></label> 	<!--On a remplacé la valeur "text" par la valeur "email" dans l'attribut "type"-->
