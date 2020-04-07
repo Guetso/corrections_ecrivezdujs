@@ -1,0 +1,20 @@
+
+async function getNumber1() {
+  return 10;
+}
+
+async function getNumber2() {
+  return 4;
+}
+
+async function compute() {
+ const value1 = await getNumber1();
+ const value2 = await getNumber2();
+ return value1 + value2;
+}
+
+compute()
+.then(function(data){
+  let result = document.getElementById("result");
+  result.innerHTML = data ;
+});
