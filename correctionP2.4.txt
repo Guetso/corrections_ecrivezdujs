@@ -1,16 +1,16 @@
-var input = document.getElementById("value");
-var form = document.getElementById("form");
-var result = document.getElementById("result");
+const input = document.getElementById("value");
+const form = document.getElementById("form");
+const result = document.getElementById("result");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  let request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
   request.open("POST", "https://mockbin.com/request");
   request.setRequestHeader("Content-Type", "application/json");
   request.send(JSON.stringify(input.value));
     request.onreadystatechange = function () {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-      let response = JSON.parse(this.responseText);
+      const response = JSON.parse(this.responseText);
       result.innerHTML = response.postData.text;
     }
   };
